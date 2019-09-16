@@ -21,16 +21,12 @@
             <div><a href="#">{{ $user->profile->url ?? 'N/A' }}</a></div>
         </div>  
     </div>
-    <div class="row pt-4">
-        <div class="col-4">
-            <img src="https://instagram.fsrg1-1.fna.fbcdn.net/vp/b6d6cac234c86f0b427927f319ae8aac/5E0F3F57/t51.2885-15/sh0.08/e35/c0.40.822.822a/s640x640/69968971_2305100466416943_647506101175149940_n.jpg?_nc_ht=instagram.fsrg1-1.fna.fbcdn.net&_nc_cat=103" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="https://instagram.fsrg1-1.fna.fbcdn.net/vp/b6d6cac234c86f0b427927f319ae8aac/5E0F3F57/t51.2885-15/sh0.08/e35/c0.40.822.822a/s640x640/69968971_2305100466416943_647506101175149940_n.jpg?_nc_ht=instagram.fsrg1-1.fna.fbcdn.net&_nc_cat=103" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="https://instagram.fsrg1-1.fna.fbcdn.net/vp/b6d6cac234c86f0b427927f319ae8aac/5E0F3F57/t51.2885-15/sh0.08/e35/c0.40.822.822a/s640x640/69968971_2305100466416943_647506101175149940_n.jpg?_nc_ht=instagram.fsrg1-1.fna.fbcdn.net&_nc_cat=103" class="w-100">
-        </div>
+    <div class="row pt-5">
+        @foreach ($user->posts as $post)
+            <div class="col-4">
+                <img src="/storage/{{ $post->image }}" class="w-100">
+            </div>
+        @endforeach
     </div>
 </div>
 @endsection
